@@ -1,3 +1,5 @@
+![the-poem-about-permission-20261121](assets/preview.png)
+
 # the-poem-about-permission-20261121 — a poem about agency
 
 One short poem about agency: the power to ask and to be given, written for the make.fun the-poem-about-permission-20261121-0235 bounty, paid in USDC.
