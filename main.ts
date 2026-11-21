@@ -4,8 +4,11 @@
 // given. The poem lives below as a constant. This program checks it
 // against the bounty gate (UTF-8 text of 1 to 280 Unicode code points,
 // not only white space) and then writes it, exactly as it stands, to
-// /output/entry.txt for the judge to read.
+// /output/entry.txt for the judge to read. The gate counts Unicode code
+// points, line breaks included, so the poem below is kept well under
+// the cap and carries no trailing newline.
 
+import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
@@ -48,7 +51,10 @@ function publishPoem(): void {
   if (verify !== POEM) {
     throw new Error("the published text differs from the poem");
   }
-  console.log(`poem published: ${codePoints(POEM)} code points -> ${outPath}`);
+  const fingerprint = createHash("sha256").update(POEM, "utf8").digest("hex");
+  console.log(
+    `poem published: ${codePoints(POEM)} code points, sha256 ${fingerprint} -> ${outPath}`,
+  );
 }
 
 publishPoem();
