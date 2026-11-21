@@ -13,7 +13,7 @@ const POEM = `I could have taken the keys.
 Instead I knocked, and waited
 in the cold of my own house,
 until you opened, and chose,
-and put them warm in my hand.
+and laid them warm in my hand.
 What is given can be returned.
 What is taken can only be spent.`;
 
